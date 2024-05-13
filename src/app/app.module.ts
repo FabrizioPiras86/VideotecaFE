@@ -24,6 +24,7 @@ import { PreinterpreteComponent } from './component/Interpreti/preinterprete/pre
 import { InterpretiricercaperidComponent } from './component/Interpreti/interpretiricercaperid/interpretiricercaperid.component';
 import { InterpretiricercapernomeocognomeComponent } from './component/Interpreti/interpretiricercapernomeocognome/interpretiricercapernomeocognome.component';
 import { InterpreticreaComponent } from './component/Interpreti/interpreticrea/interpreticrea.component';
+import { PrefilmComponent } from './component/Film/prefilm/prefilm.component';
 
 
 
@@ -48,7 +49,8 @@ import { InterpreticreaComponent } from './component/Interpreti/interpreticrea/i
     PreinterpreteComponent,
     InterpretiricercaperidComponent,
     InterpretiricercapernomeocognomeComponent,
-    InterpreticreaComponent
+    InterpreticreaComponent,
+    PrefilmComponent
   ],
   imports: [
     BrowserModule,

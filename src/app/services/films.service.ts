@@ -8,7 +8,7 @@ import { Film } from '../model/film.model';
   providedIn: 'root'
 })
 export class FilmService {
-  private apiUrl = 'http://localhost:8080/api/films'; // Assicurati che l'URL sia corretto
+  private apiUrl = 'http://localhost:8080/api/films';
 
   constructor(private http: HttpClient) { }
 
