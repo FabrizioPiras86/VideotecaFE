@@ -1,0 +1,24 @@
+<div class="background-image"></div>
+<div class="container">
+  <h4>Ricerca Genere per Descrizione</h4>
+  <div class="form-group">
+    <label for="descrizioneInput">Inserisci la descrizione del genere:</label>
+    <input type="text" class="form-control" id="descrizioneInput" [(ngModel)]="descrizione">
+  </div>
+  <button class="btn btn-primary" (click)="cercaPerDescrizione()">Cerca</button>
+
+  <div *ngIf="generi && generi.length > 0" class="result-container">
+    <h4>Generi trovati</h4>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Descrizione</th>
+      </tr>
+      <tr *ngFor="let genere of generi">
+        <td>{{ genere.idGenere }}</td>
+        <td>{{ genere.descrizione }}</td>
+      </tr>
+    </table>
+  </div>
+  <p>Per tornare alla pagina di benvenuto, clicca <a href="/welcome/Utente">qui</a></p>
+</div>

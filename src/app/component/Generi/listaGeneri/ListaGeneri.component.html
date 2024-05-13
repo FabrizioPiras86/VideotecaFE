@@ -1,0 +1,24 @@
+<div class="background-image">
+  <div class="content">
+    <p></p>
+    <p></p>
+    <h1>Generi in catalogo</h1>
+
+    <table id="articoli" border="1">
+      <thead>
+        <tr>
+          <th>Codice</th>
+          <th>Descrizione</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let varGeneri of generi | paginate: { itemsPerPage: pageSize, currentPage: p }">
+          <td>{{varGeneri.idGenere}}</td>
+          <td>{{varGeneri.descrizione}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <p>Per tornare alla pagina di benvenuto, clicca <a href="/welcome/Utente">qui</a></p>
+  </div>
+</div>

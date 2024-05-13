@@ -1,0 +1,29 @@
+<div class="background-image"></div>
+<div class="container">
+  <h4>Crea Nuovo Interprete</h4>
+  <div class="form-group">
+    <label for="nomeInput">Nome:</label>
+    <input type="text" class="form-control" id="nomeInput" [(ngModel)]="nome">
+  </div>
+  <div class="form-group">
+    <label for="cognomeInput">Cognome:</label>
+    <input type="text" class="form-control" id="cognomeInput" [(ngModel)]="cognome">
+  </div>
+  <button class="btn btn-primary" (click)="createInterprete()">Crea</button>
+  <div *ngIf="interpreteCreato" class="result-container">
+    <h4>Dettagli dell'interprete creato</h4>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Cognome</th>
+      </tr>
+      <tr>
+        <td>{{ interpreteCreato.idInterprete }}</td>
+        <td>{{ interpreteCreato.nome }}</td>
+        <td>{{ interpreteCreato.cognome }}</td>
+      </tr>
+    </table>
+  </div>
+  <p>Per tornare alla pagina di benvenuto, clicca <a href="/welcome/Utente">qui</a></p>
+</div>

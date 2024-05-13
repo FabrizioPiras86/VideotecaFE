@@ -1,0 +1,30 @@
+<div class="background-image-films">
+  <div class="content">
+    <p></p>
+    <p></p>
+    <h1>Film in catalogo</h1>
+
+    <table id="films" border="1">
+      <caption>Disponibili alla visione</caption>
+      <thead>
+        <tr>
+          <th>Codice</th>
+          <th>Titolo</th>
+          <th>Anno</th>
+          <th>Genere</th>
+          <th>Interpreti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let varFilm of films | paginate: { itemsPerPage: pageSize, currentPage: p }">
+          <td>{{varFilm.idFilm}}</td>
+          <td>{{varFilm.titolo}}</td>
+          <td>{{varFilm.anno}}</td>
+          <td>{{varFilm.genere}}</td>
+          <td>{{varFilm.interpreti}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

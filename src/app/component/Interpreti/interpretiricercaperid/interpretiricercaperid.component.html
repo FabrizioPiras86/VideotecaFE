@@ -1,0 +1,26 @@
+<div class="background-image"></div>
+<div class="container">
+  <h4>Ricerca Interprete per ID</h4>
+  <div class="form-group">
+    <label for="idInput">Inserisci l'ID dell'interprete:</label>
+    <input type="number" class="form-control" id="idInput" [(ngModel)]="interpreteId">
+  </div>
+  <button class="btn btn-primary" (click)="cercaInterprete()">Cerca</button>
+
+  <div *ngIf="interprete" class="result-container">
+    <h4>Dettagli dell'interprete</h4>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Cognome</th>
+      </tr>
+      <tr>
+        <td>{{ interprete!.idInterprete }}</td>
+        <td>{{ interprete!.nome }}</td>
+        <td>{{ interprete!.cognome }}</td>
+      </tr>
+    </table>
+  </div>
+  <p>Per tornare alla pagina di benvenuto, clicca <a href="/welcome/Utente">qui</a></p>
+</div>

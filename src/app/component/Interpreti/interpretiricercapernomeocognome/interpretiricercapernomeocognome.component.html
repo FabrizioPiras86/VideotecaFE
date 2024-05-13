@@ -1,0 +1,26 @@
+<div class="background-image"></div>
+<div class="container">
+  <h4>Ricerca Interprete per Nome o Cognome</h4>
+  <div class="form-group">
+    <label for="nomeOCognomeInput">Inserisci il nome o cognome (min 3 lettere):</label>
+    <input type="text" class="form-control" id="nomeOCognomeInput" [(ngModel)]="nomeOCognome">
+  </div>
+  <button class="btn btn-primary" (click)="cercaPerNomeOCognome()">Cerca</button>
+
+  <div *ngIf="interpreti && interpreti.length > 0" class="result-container">
+    <h4>Interpreti trovati</h4>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Cognome</th>
+      </tr>
+      <tr *ngFor="let interprete of interpreti">
+        <td>{{ interprete.idInterprete }}</td>
+        <td>{{ interprete.nome }}</td>
+        <td>{{ interprete.cognome }}</td>
+      </tr>
+    </table>
+  </div>
+  <p>Per tornare alla pagina di benvenuto, clicca <a href="/welcome/Utente">qui</a></p>
+</div>

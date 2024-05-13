@@ -1,0 +1,23 @@
+<div class="background-image"></div>
+<div class="container">
+  <h4>Crea Nuovo Genere</h4>
+  <div class="form-group">
+    <label for="descrizioneInput">Descrizione del genere:</label>
+    <input type="text" class="form-control" id="descrizioneInput" [(ngModel)]="descrizione">
+  </div>
+  <button class="btn btn-primary" (click)="createGenere()">Crea</button>
+  <div *ngIf="genereCreato" class="result-container">
+    <h4>Dettagli del genere creato</h4>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Descrizione</th>
+      </tr>
+      <tr>
+        <td>{{ genereCreato.idGenere }}</td>
+        <td>{{ genereCreato.descrizione }}</td>
+      </tr>
+    </table>
+  </div>
+  <p>Per tornare alla pagina di benvenuto, clicca <a href="/welcome/Utente">qui</a></p>
+</div>

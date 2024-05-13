@@ -1,0 +1,26 @@
+<div class="background-image"></div>
+<div class="container">
+  <h4>Ricerca Genere per ID</h4>
+  <div class="form-group">
+    <label for="idInput">Inserisci l'ID del genere:</label>
+
+    <input type="number" class="form-control" id="idInput" [(ngModel)]="genereId">
+    <!-- <input type="number" class="form-control" id="idInput" [(ngModel)]="genereId"> -->
+  </div>
+  <button class="btn btn-primary" (click)="cercaGenere()">Cerca</button>
+
+  <div *ngIf="genere" class="result-container">
+    <h4>Dettagli del genere</h4>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Descrizione</th>
+      </tr>
+      <tr>
+        <td>{{ genere!.idGenere }}</td>
+        <td>{{ genere!.descrizione }}</td>
+      </tr>
+    </table>
+  </div>
+  <p>Per tornare alla pagina di benvenuto, clicca <a href="/welcome/Utente">qui</a></p>
+</div>

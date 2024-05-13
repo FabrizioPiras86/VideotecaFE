@@ -1,0 +1,51 @@
+Stile per il modal
+.modal {
+  position: relative; /* Posizione relativa */
+}
+
+
+/* Stile per l'immagine di sfondo */
+.modal-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/gif/loading.gif'); /* Percorso dell'immagine di sfondo */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* Opacità per l'immagine di sfondo */
+  z-index: -1; /* Porta l'elemento di sfondo dietro al contenuto */
+  border-radius: 10px; /* Rendi i bordi del modal più arrotondati */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Aggiunge una leggera ombreggiatura */
+}
+
+
+
+/* Stile per il contenuto del modal */
+.modal-body {
+  position: relative; /* Posizione relativa */
+  z-index: 1; /* Assicura che il contenuto del modal sia sopra l'immagine di sfondo */
+}
+
+/* Stile per il testo */
+.modal-body h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Stile per gli elementi della lista */
+.modal-body li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Stile per le immagini */
+.modal-body img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}

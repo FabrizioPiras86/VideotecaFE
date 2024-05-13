@@ -1,0 +1,87 @@
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h5>Descrizione</h5>
+          <p class="text-body-secondary">In questa pagina troverete la lista degli interpreti presenti nei database, la
+            possibilità di aggiungere interpreti e/o modificarli</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>Link utili</h4>
+          <ul class="list-unstyled">
+            <li><a routerLink="/home" class="text-white">Torna alla pagina principale</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Interpreti</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="py-3 text-center container-fluid">
+    <div class="row py-lg-3">
+      <div class="col-lg-8 col-md-8 mx-auto">
+        <h1 class="fw-light">Interpreti di Film</h1>
+        <p class="lead text-body-secondary">Benvenuto nella sezione dedicata agli interpreti cinematografici, dove il mondo
+          del cinema si arricchisce grazie alle loro straordinarie performance. Esplora i talenti che portano vita ai personaggi,
+          ognuno con la capacità di emozionare e coinvolgere il pubblico. Che tu sia affascinato dalle interpretazioni drammatiche,
+          dalle abilità comiche o dalle capacità camaleontiche degli attori, qui troverai una varietà di talenti pronti a stupirti.
+          Scopri gli interpreti che catturano la tua immaginazione e preparati a un viaggio emozionante nel mondo del cinema.</p>
+        <h5 class="mb-0">Ti interessa vedere l'elenco degli interpreti? Clicca <a class="welcome-link"
+            routerLink="/ListaInterpreti">qui</a></h5>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <a href="/interpreticrea">
+            <img src="./assets/images/gif/creainterprete.gif" class="bd-placeholder-img card-img-top" width="100%"
+              height="225" alt="Placeholder: Thumbnail">
+            </a>
+            <div class="card-body">
+              <p class="card-text">Clicca nell'immagine per creare un interprete di film</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a href="/interpretiricercaperid">
+              <img src="./assets/images/gif/interpretixid.gif" class="bd-placeholder-img card-img-top" width="100%"
+                height="225" alt="Placeholder: Thumbnail">
+            </a>
+            <div class="card-body">
+              <p class="card-text">Clicca nell'immagine per cercare un interprete dall'id</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a href="/interpretiricercapernomeocognome">
+              <img src="./assets/images/gif/interpretipernomecognome.gif" class="bd-placeholder-img card-img-top" width="100%"
+                height="225" alt="Placeholder: Thumbnail">
+            </a>
+            <div class="card-body">
+              <p class="card-text">Clicca nell'immagine per cercare un interprete dalla descrizione</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
