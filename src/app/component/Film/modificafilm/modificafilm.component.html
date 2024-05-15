@@ -1,0 +1,29 @@
+<div class="background-image"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Modifica Film</h2>
+      <div class="form-group">
+        <label for="filmId">ID Film:</label>
+        <input type="number" class="form-control" id="filmId" [(ngModel)]="id">
+      </div>
+      <div class="form-group">
+        <label for="filmTitle">Titolo:</label>
+        <input type="text" class="form-control" id="filmTitle" [(ngModel)]="titolo">
+      </div>
+      <div class="form-group">
+        <label for="filmYear">Anno:</label>
+        <input type="text" class="form-control" id="filmYear" [(ngModel)]="anno">
+      </div>
+      <button class="btn btn-primary" (click)="updateFilm()">Aggiorna Film</button>
+    </div>
+
+    <div class="col-md-8">
+      <div *ngIf="filmUpdated">
+        <h3>Film Aggiornato</h3>
+        <p>
+          Id: {{ filmUpdated.idFilm }}, Titolo: {{ filmUpdated.titolo }}, Anno: {{ filmUpdated.anno }},
+      </div>
+    </div>
+  </div>
+</div>

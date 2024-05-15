@@ -1,0 +1,42 @@
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/filmsfondo.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.container {
+  position: relative; /* Imposta la posizione relativa */
+  z-index: 1; /* Imposta un indice z superiore per farlo apparire sopra */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f8f9fa; /* Colore di sfondo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Colore pulsante */
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Colore pulsante al passaggio del mouse */
+  border-color: #0056b3;
+}
+
+.list-group {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  border-color: #dee2e6; /* Colore bordo elementi lista */
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background-color: #fff; /* Colore sfondo elementi lista */
+}

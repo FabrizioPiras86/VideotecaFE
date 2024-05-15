@@ -1,0 +1,36 @@
+<div class="background-image"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Ricerca Film</h2>
+      <div class="form-group">
+        <label for="searchType">Tipo di Ricerca:</label>
+        <select class="form-control" id="searchType" [(ngModel)]="searchType">
+          <option value="title">Titolo</option>
+          <option value="year">Anno</option>
+          <option value="genre">Genere</option>
+          <option value="actor">Interprete</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="query">Query di Ricerca:</label>
+        <input type="text" class="form-control" id="query" [(ngModel)]="query">
+      </div>
+      <button class="btn btn-primary" (click)="searchFilms()">Cerca</button>
+    </div>
+
+    <div class="col-md-8">
+      <div *ngIf="searchResults && searchResults.length > 0">
+        <h3>Risultati della Ricerca</h3>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let result of searchResults">
+            Id: {{result.idFilm}},Titolo: {{ result.titolo }}, Anno: {{ result.anno }}, Genere: {{ result.genere }}, Interpreti:
+            <ul>
+              <li *ngFor="let interprete of result.interpreti">{{ interprete }}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

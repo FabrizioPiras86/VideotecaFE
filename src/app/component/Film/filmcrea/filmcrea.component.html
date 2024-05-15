@@ -1,0 +1,86 @@
+<div class="background-image"></div>
+<div class="container">
+  <div class="row">
+    <!-- Colonna sinistra -->
+    <div class="col-md-4">
+      <h4>Crea Nuovo Film</h4>
+      <div class="form-group">
+        <label for="titoloInput">Titolo:</label>
+        <input type="text" class="form-control" id="titoloInput" [(ngModel)]="titolo">
+      </div>
+      <div class="form-group">
+        <label for="annoInput">Anno:</label>
+        <input type="text" class="form-control" id="annoInput" [(ngModel)]="anno">
+      </div>
+      <div class="form-group">
+        <label for="genereInput">Genere:</label>
+        <input type="text" class="form-control" id="genereInput" [(ngModel)]="genere">
+      </div>
+      <div class="form-group">
+        <label for="interpretiInput">Interpreti (separati da virgola):</label>
+        <input type="text" class="form-control" id="interpretiInput" [(ngModel)]="interpreti">
+      </div>
+      <button class="btn btn-primary" (click)="createFilm()">Crea</button>
+    </div>
+
+    <!-- Colonna centrale -->
+    <div class="col-md-4">
+      <div class="list-group">
+        <h4>Lista Generi</h4>
+        <ul class="list-group">
+          <li class="list-group-item"
+            *ngFor="let genere of generi | paginate: { itemsPerPage: 6, currentPage: paginazioneGeneri }"> ID: {{
+            genere.idGenere }} - Descrizione {{genere.descrizione}}</li>
+        </ul>
+        <pagination-controls (pageChange)="paginazioneGeneri = $event"></pagination-controls>
+      </div>
+    </div>
+
+    <!-- Colonna destra -->
+    <div class="col-md-4">
+      <div class="list-group">
+        <h4>Lista Interpreti</h4>
+        <ul class="list-group">
+          <li class="list-group-item"
+            *ngFor="let interprete of interpretiArray | paginate: { itemsPerPage: 6, currentPage: paginazioneInterpreti }">
+            ID: {{ interprete.idInterprete }} - Nome: {{ interprete.nome }} - Cognome: {{ interprete.cognome }}
+          </li>
+        </ul>
+        <pagination-controls (pageChange)="paginazioneInterpreti = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Quadrato per la risposta della creazione -->
+<div class="container">
+  <div *ngIf="filmCreato" class="container">
+    <h4>Film creato con successo!</h4>
+    <table class="table centered">
+      <tr>
+        <td class="label">Id film:</td>
+        <td>{{ filmCreato.idFilm }}</td>
+      </tr>
+      <tr>
+        <td class="label">Titolo del film:</td>
+        <td>{{ filmCreato.titolo }}</td>
+      </tr>
+      <tr>
+        <td class="label">Anno del film:</td>
+        <td>{{ filmCreato.anno }}</td>
+      </tr>
+      <tr>
+        <td class="label">Genere del film:</td>
+        <td>{{ filmCreato.genere }}</td>
+      </tr>
+      <tr>
+        <td class="label">Interpreti del film:</td>
+        <td>
+          <ul>
+            <li *ngFor="let interprete of filmCreato.interpreti">{{ interprete }}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+

@@ -25,7 +25,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   bottomFilm() {
-    this.router.navigate(['Prefilm']);
+    this.router.navigate(['prefilm']);
   }
 
   bottomInterpreti() {

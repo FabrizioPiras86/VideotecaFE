@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +25,10 @@ import { InterpretiricercaperidComponent } from './component/Interpreti/interpre
 import { InterpretiricercapernomeocognomeComponent } from './component/Interpreti/interpretiricercapernomeocognome/interpretiricercapernomeocognome.component';
 import { InterpreticreaComponent } from './component/Interpreti/interpreticrea/interpreticrea.component';
 import { PrefilmComponent } from './component/Film/prefilm/prefilm.component';
-
+import { FilmcreaComponent } from './component/Film/filmcrea/filmcrea.component';
+import { SearchComponent } from './component/Film/search/search.component';
+import { ModificafilmComponent } from './component/Film/modificafilm/modificafilm.component';
+import { AggiungiComponent } from './component/Film/aggiungi/aggiungi.component';
 
 
 @NgModule({
@@ -50,7 +53,11 @@ import { PrefilmComponent } from './component/Film/prefilm/prefilm.component';
     InterpretiricercaperidComponent,
     InterpretiricercapernomeocognomeComponent,
     InterpreticreaComponent,
-    PrefilmComponent
+    PrefilmComponent,
+    FilmcreaComponent,
+    SearchComponent,
+    ModificafilmComponent,
+    AggiungiComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +65,7 @@ import { PrefilmComponent } from './component/Film/prefilm/prefilm.component';
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

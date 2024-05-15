@@ -49,7 +49,14 @@ export class FilmService {
   }
 
   addNewFilm(newFilm: Film): Observable<any> {
-    return this.http.post(`${this.apiUrl}/nuovofilm`, newFilm);
+    const requestBody = {
+      titolo: newFilm.titolo,
+      anno: newFilm.anno,
+      idGenere: newFilm.genere,
+      idInterpreti: newFilm.interpreti
+    };
+
+    return this.http.post(`${this.apiUrl}/nuovofilm`, requestBody);
   }
 
   updateFilm(id: number, titolo: string, anno: string): Observable<any> {
@@ -82,4 +89,34 @@ export class FilmService {
     const params = { idFilm, idInterprete };
     return this.http.post(`${this.apiUrl}/rimuoviattorefilm`, params);
   }
+
+  searchFilms(type: string, query: string): Observable<any> {
+    let endpoint = '';
+    let params = new HttpParams();
+
+    switch (type) {
+      case 'title':
+        endpoint = 'search';
+        params = params.set('titolo', query);
+        break;
+      case 'year':
+        endpoint = 'anno';
+        params = params.set('anno', query);
+        break;
+      case 'genre':
+        endpoint = 'genere';
+        params = params.set('genere', query);
+        break;
+      case 'actor':
+        endpoint = 'attori';
+        params = params.set('filter', query);
+        break;
+      default:
+
+        throw new Error('Invalid search type');
+    }
+
+    return this.http.get(`${this.apiUrl}/${endpoint}`, { params });
+  }
+
 }

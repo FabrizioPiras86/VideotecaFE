@@ -18,6 +18,12 @@ import { PreinterpreteComponent } from './component/Interpreti/preinterprete/pre
 import { InterpretiricercaperidComponent } from './component/Interpreti/interpretiricercaperid/interpretiricercaperid.component';
 import { InterpretiricercapernomeocognomeComponent } from './component/Interpreti/interpretiricercapernomeocognome/interpretiricercapernomeocognome.component';
 import { InterpreticreaComponent } from './component/Interpreti/interpreticrea/interpreticrea.component';
+import { PrefilmComponent } from './component/Film/prefilm/prefilm.component';
+import { FilmcreaComponent } from './component/Film/filmcrea/filmcrea.component';
+import { SearchComponent } from './component/Film/search/search.component';
+import { ModificafilmComponent } from './component/Film/modificafilm/modificafilm.component';
+import { AggiungiComponent } from './component/Film/aggiungi/aggiungi.component';
+
 
 
 const routes: Routes = [
@@ -36,6 +42,11 @@ const routes: Routes = [
   { path: "interpretiricercaperid", component: InterpretiricercaperidComponent, canActivate:[RouteGuardServiceService]},
   { path: "interpretiricercapernomeocognome", component: InterpretiricercapernomeocognomeComponent, canActivate: [RouteGuardServiceService]},
   { path: "interpreticrea", component: InterpreticreaComponent, canActivate: [RouteGuardServiceService]},
+  { path: "prefilm", component: PrefilmComponent, canActivate: [RouteGuardServiceService]},
+  { path: "filmcrea", component: FilmcreaComponent, canActivate: [RouteGuardServiceService]},
+  { path: "search", component: SearchComponent, canActivate: [RouteGuardServiceService]},
+  { path: "modificafilm", component: ModificafilmComponent, canActivate: [RouteGuardServiceService]},
+  { path: "aggiungi", component: AggiungiComponent, canActivate: [RouteGuardServiceService]},
   { path: "logout", component: LogoutComponent },
   { path: "**", component: ErrorComponent },
 ];
