@@ -29,6 +29,8 @@ import { FilmcreaComponent } from './component/Film/filmcrea/filmcrea.component'
 import { SearchComponent } from './component/Film/search/search.component';
 import { ModificafilmComponent } from './component/Film/modificafilm/modificafilm.component';
 import { AggiungiComponent } from './component/Film/aggiungi/aggiungi.component';
+import { ModificaGenereComponent } from './component/Film/modifica-genere/modifica-genere.component';
+import { CancellaComponent } from './component/Film/cancella/cancella.component';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import { AggiungiComponent } from './component/Film/aggiungi/aggiungi.component'
     SearchComponent,
     ModificafilmComponent,
     AggiungiComponent,
+    ModificaGenereComponent,
+    CancellaComponent,
   ],
   imports: [
     BrowserModule,

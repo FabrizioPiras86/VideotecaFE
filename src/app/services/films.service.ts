@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Film } from '../model/film.model';
+import { Interprete } from '../model/interprete.model';
 
 
 @Injectable({
@@ -44,6 +45,11 @@ export class FilmService {
     return this.http.get(`${this.apiUrl}/titolocompleto`);
   }
 
+  getActors(): Observable<Interprete[]> {
+    return this.http.get<Interprete[]>(`${this.apiUrl}/listaInterpreti`);
+  }
+
+
   getCompleteFilmById(id: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/titolocompleto/${id}`);
   }
@@ -79,15 +85,11 @@ export class FilmService {
   }
 
   addActorToFilm(idFilm: number, idInterprete: number): Observable<any> {
-    const params = new HttpParams()
-      .set('id_film', idFilm.toString())
-      .set('id_interprete', idInterprete.toString());
-    return this.http.post(`${this.apiUrl}/aggiungiattorefilm`, params);
+    return this.http.post(`${this.apiUrl}/aggiungiattorefilm?id_film=${idFilm}&id_interprete=${idInterprete}`, {});
   }
 
   removeActorFromFilm(idFilm: number, idInterprete: number): Observable<any> {
-    const params = { idFilm, idInterprete };
-    return this.http.post(`${this.apiUrl}/rimuoviattorefilm`, params);
+    return this.http.post(`${this.apiUrl}/rimuoviattorefilm?idFilm=${idFilm}&idInterprete=${idInterprete}`, {});
   }
 
   searchFilms(type: string, query: string): Observable<any> {
@@ -120,3 +122,4 @@ export class FilmService {
   }
 
 }
+

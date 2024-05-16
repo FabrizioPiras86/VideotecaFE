@@ -2,34 +2,41 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <h2>Aggiungi/Rimuovi Attore da Film</h2>
-
+      <h2>Aggiungi/Rimuovi Interprete da Film</h2>
+      <form [formGroup]="aggiungiForm">
         <div class="form-group">
-          <label for="idFilm">ID Film:</label>
-          <input type="number" class="form-control" id="idFilm" formControlName="idFilm">
+          <label for="idFilm">Seleziona un Film:</label>
+          <select class="form-control" id="idFilm" formControlName="idFilm">
+            <option *ngFor="let film of films" [value]="film.idFilm">{{ film.titolo }}</option>
+          </select>
         </div>
         <div class="form-group">
-          <label for="idInterprete">ID Interprete:</label>
-          <input type="number" class="form-control" id="idInterprete" formControlName="idInterprete">
+          <label for="idInterprete">Seleziona un Interprete:</label>
+          <select class="form-control" id="idInterprete" formControlName="idInterprete">
+            <option *ngFor="let interprete of interpreti" [value]="interprete.idInterprete">
+              {{ interprete.nome }} {{ interprete.cognome }}
+            </option>
+          </select>
         </div>
-        <button type="button" class="btn btn-primary" (click)="aggiungiAttoreFilm()">Aggiungi Attore al Film</button>
-        <button type="button" class="btn btn-danger" (click)="rimuoviAttoreFilm()">Rimuovi Attore dal Film</button>
-
-
+        <div class="form-group">
+          <label for="operazione">Operazione:</label>
+          <select class="form-control" id="operazione" formControlName="operazione">
+            <option value="aggiungi">Aggiungi</option>
+            <option value="rimuovi">Rimuovi</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="aggiungiAttoreFilm()">Aggiungi/Rimuovi
+          Interprete</button>
+      </form>
     </div>
-
     <div class="col-md-8">
-      <div *ngIf="findResult && findResult.length > 0">
-        <h3>Risultati della Ricerca</h3>
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let result of findResult">
-            Id: {{result.idFilm}}, Titolo: {{ result.titolo }}, Anno: {{ result.anno }}, Genere: {{ result.genere }},
-            Interpreti:
-            <ul>
-              <li *ngFor="let interprete of result.interpreti">{{ interprete }}</li>
-            </ul>
-          </li>
-        </ul>
+      <div class="result-container">
+        <div *ngIf="lastOperationResult" class="result-box">
+          <h3>Risultato dell'ultima operazione</h3>
+          <p>{{ lastOperationResult }}</p>
+          <h5 class="mb-0">Ti interessa vedere l'elenco dei film? Clicca <a class="welcome-link"
+            routerLink="/ListaFilm">qui</a></h5>
+        </div>
       </div>
     </div>
   </div>

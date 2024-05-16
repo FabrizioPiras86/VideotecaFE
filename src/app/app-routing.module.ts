@@ -23,6 +23,8 @@ import { FilmcreaComponent } from './component/Film/filmcrea/filmcrea.component'
 import { SearchComponent } from './component/Film/search/search.component';
 import { ModificafilmComponent } from './component/Film/modificafilm/modificafilm.component';
 import { AggiungiComponent } from './component/Film/aggiungi/aggiungi.component';
+import { ModificaGenereComponent } from './component/Film/modifica-genere/modifica-genere.component';
+import { CancellaComponent } from './component/Film/cancella/cancella.component';
 
 
 
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path: "search", component: SearchComponent, canActivate: [RouteGuardServiceService]},
   { path: "modificafilm", component: ModificafilmComponent, canActivate: [RouteGuardServiceService]},
   { path: "aggiungi", component: AggiungiComponent, canActivate: [RouteGuardServiceService]},
+  { path: "modificagenere", component: ModificaGenereComponent, canActivate:[RouteGuardServiceService]},
+  { path: "cancella", component: CancellaComponent, canActivate: [RouteGuardServiceService]},
   { path: "logout", component: LogoutComponent },
   { path: "**", component: ErrorComponent },
 ];

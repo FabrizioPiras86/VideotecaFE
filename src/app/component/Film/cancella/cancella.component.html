@@ -1,0 +1,28 @@
+<div class="background-image"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Cancella Film</h2>
+      <form [formGroup]="cancellaForm">
+        <div class="form-group">
+          <label for="idFilm">Seleziona un Film:</label>
+          <select class="form-control" id="idFilm" formControlName="idFilm">
+            <option *ngFor="let film of films" [value]="film.idFilm">{{ film.titolo }}</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-danger" (click)="cancellaFilm()">Cancella Film</button>
+      </form>
+    </div>
+      <div class="col-md-8">
+        <div class="result-container">
+          <div *ngIf="lastOperationResult" class="result-box">
+            <h3>Risultato dell'ultima operazione</h3>
+            <p>{{ lastOperationResult }}</p>
+            <h5 class="mb-0">Ti interessa vedere l'elenco dei film? Clicca <a class="welcome-link"
+                routerLink="/ListaFilm">qui</a></h5>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
