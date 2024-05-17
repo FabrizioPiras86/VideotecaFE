@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +32,7 @@ import { AggiungiComponent } from './component/Film/aggiungi/aggiungi.component'
 import { ModificaGenereComponent } from './component/Film/modifica-genere/modifica-genere.component';
 import { CancellaComponent } from './component/Film/cancella/cancella.component';
 import { RegistrazioneComponent } from './component/Utenti/registrazione/registrazione.component';
+import { ModificapersonaleComponent } from './component/Utenti/modificapersonale/modificapersonale.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { RegistrazioneComponent } from './component/Utenti/registrazione/registr
     ModificaGenereComponent,
     CancellaComponent,
     RegistrazioneComponent,
+    ModificapersonaleComponent,
   ],
   imports: [
     BrowserModule,

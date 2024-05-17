@@ -14,11 +14,11 @@ export class UtentiService {
   constructor(private http: HttpClient) { }
 
   registerUser(utenteregistrazione: Utenteregistrazione): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/test`, utenteregistrazione);
+    return this.http.post<any>(`${this.baseUrl}/register`, utenteregistrazione);
   }
 
-  login(utente: Utente): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/login`, utente);
+  login(utenteregistrazione: Utenteregistrazione): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/login`, utenteregistrazione);
   }
 
   searchUtenteByNome(nome: string): Observable<Utente> {
@@ -37,7 +37,6 @@ export class UtentiService {
     return this.http.get<Utente>(`${this.baseUrl}/cercaEmail?email=${email}`);
   }
 
-  // Metodo che riunisce le chiamate ai vari endpoint di ricerca
   searchUtente(searchParams: { nome?: string, cognome?: string, ddn?: string, email?: string }): Observable<Utente> {
     const { nome, cognome, ddn, email } = searchParams;
     let url = `${this.baseUrl}/cerca?`;

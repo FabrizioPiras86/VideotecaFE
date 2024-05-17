@@ -26,6 +26,7 @@ import { AggiungiComponent } from './component/Film/aggiungi/aggiungi.component'
 import { ModificaGenereComponent } from './component/Film/modifica-genere/modifica-genere.component';
 import { CancellaComponent } from './component/Film/cancella/cancella.component';
 import { RegistrazioneComponent } from './component/Utenti/registrazione/registrazione.component';
+import { ModificapersonaleComponent } from './component/Utenti/modificapersonale/modificapersonale.component';
 
 
 
@@ -53,6 +54,7 @@ const routes: Routes = [
   { path: "modificagenere", component: ModificaGenereComponent, canActivate:[RouteGuardServiceService]},
   { path: "cancella", component: CancellaComponent, canActivate: [RouteGuardServiceService]},
   { path: "registrazione", component: RegistrazioneComponent},
+  { path: "modificapersonale", component: ModificapersonaleComponent, canActivate: [RouteGuardServiceService]},
   { path: "logout", component: LogoutComponent },
   { path: "**", component: ErrorComponent },
 ];

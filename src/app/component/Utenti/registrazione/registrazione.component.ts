@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UtentiService } from '../../../services/utenti.service';
 import { Utenteregistrazione } from '../../../model/utenteregistrazione.model';
 
@@ -20,12 +20,23 @@ export class RegistrazioneComponent {
   ) {
     this.registrazioneForm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, this.passwordValidator]]
     });
   }
 
+  passwordValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const password = control.value;
+    if (password && password.length < 8) {
+      return { 'minLength': true };
+    }
+    if (password && !/(?=.*[a-zA-Z])(?=.*\d)/.test(password)) {
+      return { 'invalidPassword': true };
+    }
+    return null;
+  }
+
   onSubmit() {
-    if(this.registrazioneForm.valid) {
+    if (this.registrazioneForm.valid) {
       this.utente.username = this.registrazioneForm.value['username'];
       this.utente.password = this.registrazioneForm.value['password'];
       console.log(this.utente);

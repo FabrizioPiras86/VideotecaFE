@@ -7,11 +7,15 @@
         <label for="username">Username</label>
         <input type="text" formControlName="username" id="username" placeholder="Inserisci il tuo username">
       </div>
-      <div class="form-group">
+      <div class="form-group" [class.error]="registrazioneForm.get('password')?.invalid && registrazioneForm.get('password')?.touched">
         <label for="password">Password</label>
         <input type="password" formControlName="password" id="password" placeholder="Inserisci la tua password">
+        <p class="error-message" *ngIf="registrazioneForm.get('password')?.hasError('required') && registrazioneForm.get('password')?.touched">La password è richiesta.</p>
+        <p class="error-message" *ngIf="registrazioneForm.get('password')?.hasError('minLength') && registrazioneForm.get('password')?.touched">La password deve contenere almeno 8 caratteri alfanumerici.</p>
+        <p class="error-message" *ngIf="registrazioneForm.get('password')?.hasError('invalidPassword') && registrazioneForm.get('password')?.touched">La password deve contenere almeno una lettera e un numero.</p>
       </div>
-      <button type="submit">Registrati</button>
+      <button type="submit" [disabled]="!registrazioneForm.valid">Registrati</button>
     </form>
   </div>
 </div>
+
