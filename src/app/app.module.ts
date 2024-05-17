@@ -31,6 +31,7 @@ import { ModificafilmComponent } from './component/Film/modificafilm/modificafil
 import { AggiungiComponent } from './component/Film/aggiungi/aggiungi.component';
 import { ModificaGenereComponent } from './component/Film/modifica-genere/modifica-genere.component';
 import { CancellaComponent } from './component/Film/cancella/cancella.component';
+import { RegistrazioneComponent } from './component/Utenti/registrazione/registrazione.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { CancellaComponent } from './component/Film/cancella/cancella.component'
     AggiungiComponent,
     ModificaGenereComponent,
     CancellaComponent,
+    RegistrazioneComponent,
   ],
   imports: [
     BrowserModule,
