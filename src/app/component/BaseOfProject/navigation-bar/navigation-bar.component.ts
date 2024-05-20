@@ -10,24 +10,19 @@ import { Router } from '@angular/router';
 export class NavigationBarComponent {
 
 
-  constructor(public BasicAuth: AuthorizationServiceService, private router: Router) {}
-
-  login() {
-    const userId = 'pippo';
-    const password = '1234';
-
-    const isAuth = this.BasicAuth.autentica(userId,password);
-
-    if(isAuth){
-      this.router.navigate(['/welcome', userId]);
-    }else{
-      console.log('Credenziali non valide');
-    }
-  }
+  constructor(public BasicAuth: AuthorizationServiceService, private router: Router, private authService: AuthorizationServiceService) {}
 
   logout(){
     this.BasicAuth.clearAll();
     this.router.navigate(['/login']);
+  }
+
+  isAdmin():boolean {
+    return this.authService.getAuthLevel() ===1;
+  }
+
+  isLogged(): boolean {
+    return this.BasicAuth.isLogged();
   }
 
 }

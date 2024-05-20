@@ -13,6 +13,20 @@ export class UtentiService {
 
   constructor(private http: HttpClient) { }
 
+  searchUtente(searchParams: { nome?: string, cognome?: string, ddn?: string, email?: string }): Observable<Utente> {
+    const { nome, cognome, ddn, email } = searchParams;
+    let url = `${this.baseUrl}/cerca?`;
+
+    if (nome) url += `nome=${nome}&`;
+    if (cognome) url += `cognome=${cognome}&`;
+    if (ddn) url += `ddn=${ddn}&`;
+    if (email) url += `email=${email}&`;
+
+    url = url.slice(0, -1);
+
+    return this.http.get<Utente>(url);
+  }
+
   registerUser(utenteregistrazione: Utenteregistrazione): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/register`, utenteregistrazione);
   }
@@ -35,20 +49,6 @@ export class UtentiService {
 
   searchUtenteByEmail(email: string): Observable<Utente> {
     return this.http.get<Utente>(`${this.baseUrl}/cercaEmail?email=${email}`);
-  }
-
-  searchUtente(searchParams: { nome?: string, cognome?: string, ddn?: string, email?: string }): Observable<Utente> {
-    const { nome, cognome, ddn, email } = searchParams;
-    let url = `${this.baseUrl}/cerca?`;
-
-    if (nome) url += `nome=${nome}&`;
-    if (cognome) url += `cognome=${cognome}&`;
-    if (ddn) url += `ddn=${ddn}&`;
-    if (email) url += `email=${email}&`;
-
-    url = url.slice(0, -1);
-
-    return this.http.get<Utente>(url);
   }
 
   updateUser(userId: number, updatedUserData: Utente): Observable<Utente> {

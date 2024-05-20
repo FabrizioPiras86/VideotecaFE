@@ -19,7 +19,7 @@
     <div class="container-fluid">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <!-- Primo Riquadro -->
-        <div class="col">
+        <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/filmcrea">
               <img src="./assets/images/gif/filmcrea.gif" class="bd-placeholder-img card-img-top" width="100%"
@@ -42,8 +42,8 @@
             </div>
           </div>
         </div>
-        <!-- Settimo Riquadro -->
-        <div class="col">
+        <!-- terzo Riquadro -->
+        <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/modificafilm">
               <img src="./assets/images/gif/filmmodifica.gif" class="bd-placeholder-img card-img-top" width="100%"
@@ -54,8 +54,8 @@
             </div>
           </div>
         </div>
-        <!-- Ottavo Riquadro -->
-        <div class="col">
+        <!-- quarto Riquadro -->
+        <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/aggiungi">
               <img src="./assets/images/gif/filmaggiungiattore.gif" class="bd-placeholder-img card-img-top" width="100%"
@@ -66,8 +66,8 @@
             </div>
           </div>
         </div>
-        <!-- Nono Riquadro -->
-        <div class="col">
+        <!-- quinto Riquadro -->
+        <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/modificagenere">
               <img src="./assets/images/gif/filmaggiungigenere.gif" class="bd-placeholder-img card-img-top" width="100%"
@@ -78,8 +78,8 @@
             </div>
           </div>
         </div>
-        <!-- Decimo Riquadro -->
-        <div class="col">
+        <!-- sesto Riquadro -->
+        <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/cancella">
               <img src="./assets/images/gif/filmdelete.gif" class="bd-placeholder-img card-img-top" width="100%"

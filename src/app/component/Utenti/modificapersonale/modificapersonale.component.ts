@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthorizationServiceService } from '../../../services/authorization-service.service';
 
 @Component({
   selector: 'app-modificapersonale',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class ModificapersonaleComponent {
 
+  constructor(public authService: AuthorizationServiceService) {}
 }
