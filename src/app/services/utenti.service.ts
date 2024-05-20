@@ -46,7 +46,6 @@ export class UtentiService {
     if (ddn) url += `ddn=${ddn}&`;
     if (email) url += `email=${email}&`;
 
-    // Rimuovi l'ultimo carattere (&) dall'URL
     url = url.slice(0, -1);
 
     return this.http.get<Utente>(url);
