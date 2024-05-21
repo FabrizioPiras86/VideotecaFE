@@ -13,6 +13,18 @@ export class UtentiService {
 
   constructor(private http: HttpClient) { }
 
+  deleteUser(idUtente: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/delete?idUtente=${idUtente}`);
+  }
+
+  getUserByUsername(username: string): Observable<Utente> {
+    return this.http.get<Utente>(`${this.baseUrl}/cercaUsername?username=${username}`);
+  }
+
+  updateUser(username: string, utente: Utente): Observable<Utente> {
+    return this.http.put<Utente>(`${this.baseUrl}/${username}/update`, utente);
+  }
+
   searchUtente(searchParams: { nome?: string, cognome?: string, ddn?: string, email?: string }): Observable<Utente> {
     const { nome, cognome, ddn, email } = searchParams;
     let url = `${this.baseUrl}/cerca?`;
@@ -51,7 +63,4 @@ export class UtentiService {
     return this.http.get<Utente>(`${this.baseUrl}/cercaEmail?email=${email}`);
   }
 
-  updateUser(userId: number, updatedUserData: Utente): Observable<Utente> {
-    return this.http.put<Utente>(`${this.baseUrl}/${userId}/update`, updatedUserData);
-  }
 }

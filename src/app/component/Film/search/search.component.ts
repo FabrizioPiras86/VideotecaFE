@@ -8,9 +8,9 @@ import { FilmService } from '../../../services/films.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  searchType: string = ''; // Inizializzazione con stringa vuota
-  query: string = '';      // Inizializzazione con stringa vuota
-  searchResults: any[] = []; // Inizializzazione con array vuoto
+  searchType: string = '';
+  query: string = '';
+  searchResults: any[] = [];
   result: any;
 
 

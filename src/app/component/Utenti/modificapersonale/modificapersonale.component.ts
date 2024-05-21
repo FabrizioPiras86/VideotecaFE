@@ -1,12 +1,46 @@
-import { Component } from '@angular/core';
-import { AuthorizationServiceService } from '../../../services/authorization-service.service';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Utente } from '../../../model/utente.model';
+import { UtentiService } from '../../../services/utenti.service';
 
 @Component({
   selector: 'app-modificapersonale',
   templateUrl: './modificapersonale.component.html',
-  styleUrl: './modificapersonale.component.css'
+  styleUrls: ['./modificapersonale.component.css']
 })
-export class ModificapersonaleComponent {
+export class ModificapersonaleComponent implements OnInit {
+  utente: Utente = {};
+  username: string = '';
 
-  constructor(public authService: AuthorizationServiceService) {}
+  constructor(private utentiService: UtentiService) {}
+
+  ngOnInit(): void {
+    this.username = sessionStorage.getItem('Utente')!;
+    this.loadUserData();
+  }
+
+
+  loadUserData(): void {
+    this.utentiService.getUserByUsername(this.username).subscribe((data: Utente) => {
+      this.utente = data;
+      // Converti la data di nascita nel fuso orario locale
+      if (this.utente.ddn) {
+        console.log(this.utente.ddn.toDateString())
+        this.utente.ddn = new Date(this.utente.ddn);
+        // Applica la correzione del fuso orario
+        this.utente.ddn.setMinutes(this.utente.ddn.getMinutes() - this.utente.ddn.getTimezoneOffset());
+      }
+      console.log(this.utente);
+    }, error => {
+      alert('Errore nel caricamento dei dati utente.');
+    });
+  }
+
+
+  onSubmit(): void {
+    this.utentiService.updateUser(this.username, this.utente).subscribe(response => {
+      alert('Dati aggiornati con successo!');
+    }, error => {
+      alert('Si è verificato un errore durante l\'aggiornamento dei dati.');
+    });
+  }
 }

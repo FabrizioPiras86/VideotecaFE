@@ -21,6 +21,9 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/preinterprete">Interpreti</a>
         </li>
+        <li *ngIf="isAdmin()" class="nav-item">
+          <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+        </li>
       </ul>
 
       <div class="btn-group">
@@ -33,15 +36,14 @@
           <li><a class="dropdown-item" href="/login">Accedi</a></li>
           <li><a class="dropdown-item" href="/registrazione">Registrati</a></li>
           <li *ngIf="isLogged()"><a class="dropdown-item" href="/modificapersonale">Modifica Personale</a></li>
+          <li *ngIf="isAdmin()"><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li *ngIf="BasicAuth.isLogged()">
-            <a class="dropdown-item" [routerLink]="['/logout']" (click)="logout()">Logout {{ BasicAuth.loggedUser()
-              }}</a>
+            <a class="dropdown-item" [routerLink]="['/logout']" (click)="logout()">Logout {{ BasicAuth.loggedUser() }}</a>
           </li>
         </ul>
-
       </div>
     </div>
   </div>
