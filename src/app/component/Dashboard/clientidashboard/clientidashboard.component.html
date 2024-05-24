@@ -1,0 +1,59 @@
+<body>
+  <div class="background-image"></div>
+  <div class="container">
+    <h2>Ricerca Utenti</h2>
+    <div class="search-form">
+      <label for="searchType">Seleziona Tipo di Ricerca:</label>
+      <select id="searchType" [(ngModel)]="searchType">
+        <option value="nomeUtente">Nome Utente</option>
+        <option value="firstname">Nome</option>
+        <option value="surname">Cognome</option>
+        <option value="born">Data di Nascita</option>
+        <option value="mail">Email</option>
+      </select>
+      <input type="text" [(ngModel)]="query" placeholder="Inserisci la tua ricerca">
+      <button (click)="searchUser()">Cerca</button>
+    </div>
+
+    <div *ngIf="searchResults">
+      <h3>Risultati della ricerca</h3>
+      <ul class="results-list">
+        <li *ngFor="let utente of searchResults" class="result-item">
+          <span class="user-info">{{ utente.nome }} {{ utente.cognome }}</span>
+          <button class="btn-delete" (click)="deleteUser(utente.idUtente)">Elimina</button>
+          <button class="btn-edit" (click)="showUserUpdateForm(utente)">Modifica</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Update User Form -->
+    <div *ngIf="showUpdateForm" class="update-form">
+      <h3>Modifica Utente</h3>
+      <form (ngSubmit)="updateUser(updatedUser)">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input id="nome" type="text" [(ngModel)]="updatedUser.nome" name="nome" placeholder="Nome">
+        </div>
+        <div class="form-group">
+          <label for="cognome">Cognome:</label>
+          <input id="cognome" type="text" [(ngModel)]="updatedUser.cognome" name="cognome" placeholder="Cognome">
+        </div>
+        <div class="form-group">
+          <label for="ddn">Data di Nascita:</label>
+          <input id="ddn" type="date" [(ngModel)]="updatedUser.ddn" name="ddn" placeholder="Data di Nascita">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input id="email" type="email" [(ngModel)]="updatedUser.email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="autorizzazione">Autorizzazione:</label>
+          <input id="autorizzazione" type="text" [(ngModel)]="updatedUser.autorizzazione" name="autorizzazione"
+            placeholder="Autorizzazione">
+        </div>
+        <button type="submit">Aggiorna</button>
+        <button type="button" (click)="hideUpdateForm()">Annulla</button>
+      </form>
+    </div>
+  </div>
+</body>

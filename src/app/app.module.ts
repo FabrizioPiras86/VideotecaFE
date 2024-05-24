@@ -33,7 +33,9 @@ import { ModificaGenereComponent } from './component/Film/modifica-genere/modifi
 import { CancellaComponent } from './component/Film/cancella/cancella.component';
 import { RegistrazioneComponent } from './component/Utenti/registrazione/registrazione.component';
 import { ModificapersonaleComponent } from './component/Utenti/modificapersonale/modificapersonale.component';
-import { DashboardComponent } from './component/Utenti/dashboard/dashboard.component';
+import { HomedashboardComponent } from './component/Dashboard/homedashboard/homedashboard.component';
+import { ClientidashboardComponent } from './component/Dashboard/clientidashboard/clientidashboard.component';
+
 
 
 @NgModule({
@@ -67,7 +69,8 @@ import { DashboardComponent } from './component/Utenti/dashboard/dashboard.compo
     CancellaComponent,
     RegistrazioneComponent,
     ModificapersonaleComponent,
-    DashboardComponent,
+    HomedashboardComponent,
+    ClientidashboardComponent,
   ],
   imports: [
     BrowserModule,

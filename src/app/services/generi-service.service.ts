@@ -11,6 +11,10 @@ export class GeneriService {
 
   constructor(private http: HttpClient) { }
 
+  getNumeroTotaleGeneri(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/numeroTotaleGeneri`);
+  }
+
   getGenereById(id: number): Observable<Genere> {
     return this.http.get<Genere>(`${this.baseUrl}/genere/${id}`);
   }

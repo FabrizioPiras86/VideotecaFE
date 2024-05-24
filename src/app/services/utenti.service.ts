@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Utente } from '../model/utente.model';
@@ -13,39 +13,50 @@ export class UtentiService {
 
   constructor(private http: HttpClient) { }
 
-  deleteUser(idUtente: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete?idUtente=${idUtente}`);
+  getNumeroTotaleUtenti(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/numeroTotaleMembri`);
   }
 
   getUserByUsername(username: string): Observable<Utente> {
     return this.http.get<Utente>(`${this.baseUrl}/cercaUsername?username=${username}`);
   }
 
-  updateUser(username: string, utente: Utente): Observable<Utente> {
-    return this.http.put<Utente>(`${this.baseUrl}/${username}/update`, utente);
+  deleteUser(idUtente: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/delete/${idUtente}`);
   }
 
-  searchUtente(searchParams: { nome?: string, cognome?: string, ddn?: string, email?: string }): Observable<Utente> {
-    const { nome, cognome, ddn, email } = searchParams;
-    let url = `${this.baseUrl}/cerca?`;
+  searchUtente(type: string, query: string): Observable<Utente[]> {
+    let endpoint = '';
+    let params = new HttpParams();
 
-    if (nome) url += `nome=${nome}&`;
-    if (cognome) url += `cognome=${cognome}&`;
-    if (ddn) url += `ddn=${ddn}&`;
-    if (email) url += `email=${email}&`;
+    switch (type) {
+      case 'nomeUtente':
+        endpoint = 'cercaUsername';
+        params = params.set('username', query);
+        break;
+      case 'firstname':
+        endpoint = 'cercaNome';
+        params = params.set('nome', query);
+        break;
+      case 'surname':
+        endpoint = 'cercaCognome';
+        params = params.set('cognome', query);
+        break;
+      case 'born':
+        endpoint = 'cercaDdn';
+        params = params.set('ddn', query);
+        break;
+      case 'mail':
+        endpoint = 'cercaEmail';
+        params = params.set('email', query);
+        break;
+      default:
+        throw new Error('Invalid search type');
+    }
 
-    url = url.slice(0, -1);
-
-    return this.http.get<Utente>(url);
+    return this.http.get<Utente[]>(`${this.baseUrl}/${endpoint}`, { params });
   }
 
-  registerUser(utenteregistrazione: Utenteregistrazione): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/register`, utenteregistrazione);
-  }
-
-  login(utenteregistrazione: Utenteregistrazione): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/login`, utenteregistrazione);
-  }
 
   searchUtenteByNome(nome: string): Observable<Utente> {
     return this.http.get<Utente>(`${this.baseUrl}/cercaNome?nome=${nome}`);
@@ -55,12 +66,28 @@ export class UtentiService {
     return this.http.get<Utente>(`${this.baseUrl}/cercaCognome?cognome=${cognome}`);
   }
 
-  searchUtenteByDdn(ddn: string): Observable<Utente> {
-    return this.http.get<Utente>(`${this.baseUrl}/cercaDdn?ddn=${ddn}`);
+  searchUtenteByDdn(year: string): Observable<Utente[]> {
+    return this.http.get<Utente[]>(`${this.baseUrl}/cercaDdn?year=${year}`);
   }
 
-  searchUtenteByEmail(email: string): Observable<Utente> {
-    return this.http.get<Utente>(`${this.baseUrl}/cercaEmail?email=${email}`);
+  searchUtenteByEmail(email: string): Observable<Utente[]> {
+    return this.http.get<Utente[]>(`${this.baseUrl}/cercaEmail?email=${email}`);
+  }
+
+  updateUser(username: string, utente: Utente): Observable<Utente> {
+    return this.http.put<Utente>(`${this.baseUrl}/${username}/update`, utente);
+  }
+
+  updateUserAdmin(username: string, utente: Utente): Observable<Utente> {
+    return this.http.put<Utente>(`${this.baseUrl}/${username}/updateAdmin`, utente);
+  }
+
+  registerUser(utenteregistrazione: Utenteregistrazione): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/register`, utenteregistrazione);
+  }
+
+  login(utenteregistrazione: Utenteregistrazione): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/login`, utenteregistrazione);
   }
 
 }

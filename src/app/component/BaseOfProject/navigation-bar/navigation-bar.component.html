@@ -22,7 +22,7 @@
           <a class="nav-link" routerLink="/preinterprete">Interpreti</a>
         </li>
         <li *ngIf="isAdmin()" class="nav-item">
-          <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+          <a class="nav-link" routerLink="/homedashboard">Dashboard</a>
         </li>
       </ul>
 
@@ -36,7 +36,7 @@
           <li><a class="dropdown-item" href="/login">Accedi</a></li>
           <li><a class="dropdown-item" href="/registrazione">Registrati</a></li>
           <li *ngIf="isLogged()"><a class="dropdown-item" href="/modificapersonale">Modifica Personale</a></li>
-          <li *ngIf="isAdmin()"><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+          <li *ngIf="isAdmin()"><a class="dropdown-item" href="/homedashboard">Dashboard</a></li>
           <li>
             <hr class="dropdown-divider">
           </li>

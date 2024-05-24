@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Film } from '../model/film.model';
 import { Interprete } from '../model/interprete.model';
@@ -9,9 +9,22 @@ import { Interprete } from '../model/interprete.model';
   providedIn: 'root'
 })
 export class FilmService {
+
   private apiUrl = 'http://localhost:8080/api/films';
 
   constructor(private http: HttpClient) { }
+
+  getNumeroTotaleFilm(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/numeroTotaleFilm`);
+  }
+
+  getNumeroFilmPerGenere(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/numfilmpergenere`);
+  }
+
+  getNumeroFilmPerInterprete(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/numfilmperinterprete`);
+  }
 
   getFilmTitles(): Observable<any> {
     return this.http.get(`${this.apiUrl}/titles`);

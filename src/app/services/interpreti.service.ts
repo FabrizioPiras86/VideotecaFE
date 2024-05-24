@@ -12,6 +12,10 @@ export class InterpretiService {
 
   constructor(private http: HttpClient) { }
 
+  getNumeroTotaleInterpreti(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/numeroTotaleInterpreti`);
+  }
+
   getInterpreti(): Observable<Interprete[]> {
     return this.http.get<Interprete[]>(`${this.baseUrl}/listaInterpreti`);
   }
