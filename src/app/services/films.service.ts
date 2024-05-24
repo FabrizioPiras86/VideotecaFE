@@ -9,7 +9,10 @@ import { Interprete } from '../model/interprete.model';
   providedIn: 'root'
 })
 export class FilmService {
+<<<<<<< HEAD
 
+=======
+>>>>>>> abd7ef8c6cb5a4a166fa82ce5a8a831cad11a170
   private apiUrl = 'http://localhost:8080/api/films';
 
   constructor(private http: HttpClient) { }
