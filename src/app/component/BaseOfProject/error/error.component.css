@@ -10,7 +10,7 @@
 }
 
 .error-container img {
-  width: 700px; /* Imposta la larghezza dell'immagine come desiderato */
+  width: 1400px; /* Imposta la larghezza dell'immagine come desiderato */
   height: auto; /* Mantieni l'aspetto proporzionale */
   margin-bottom: 20px; /* Aggiunge un margine inferiore per separare l'immagine dal testo */
 }
