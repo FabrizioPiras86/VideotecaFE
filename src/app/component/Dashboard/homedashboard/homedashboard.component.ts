@@ -80,7 +80,6 @@ export class HomedashboardComponent implements OnInit {
       return;
     }
 
-    // Trasforma l'oggetto in un array di oggetti con coppie nome e numeroFilm
     const chartData = Object.keys(data).map((nome) => ({
       nome: nome,
       numeroFilm: data[nome]

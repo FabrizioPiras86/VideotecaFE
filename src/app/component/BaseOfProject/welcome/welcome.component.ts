@@ -11,6 +11,7 @@ export class WelcomeComponent implements OnInit {
   userId: string = '';
   titolo: string = "Benvenuti in Alpha Videoteca";
   sottotitolo: string = "Tantissimi film da vedere e scaricare";
+  gifPlaying: boolean = false; // Variabile per controllare lo stato della GIF
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -20,16 +21,27 @@ export class WelcomeComponent implements OnInit {
     });
   }
 
-  bottomGeneri() {
-    this.router.navigate(['Pregeneri']);
-  }
-
-  bottomFilm() {
+  navigateToPreFilm() {
     this.router.navigate(['prefilm']);
   }
 
-  bottomInterpreti() {
+  navigateToPreGeneri() {
+    this.router.navigate(['Pregeneri']);
+  }
+
+  navigateToPreInterprete() {
     this.router.navigate(['preinterprete']);
   }
-}
 
+  onMouseOver(event: MouseEvent) {
+    const target = event.currentTarget as HTMLElement;
+    const gif = target.querySelector('.card-gif') as HTMLImageElement;
+    this.gifPlaying = true; 
+  }
+
+  onMouseLeave(event: MouseEvent) {
+    const target = event.currentTarget as HTMLElement;
+    const gif = target.querySelector('.card-gif') as HTMLImageElement;
+    this.gifPlaying = false; 
+  }
+}

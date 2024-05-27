@@ -1,29 +1,27 @@
-<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content rounded-4 shadow">
-      <div class="modal-body p-5">
-        <h2 class="fw-bold mb-0">Ciao {{userId}}</h2>
-        <ul class="d-grid gap-4 my-5 list-unstyled small">
-          <li class="d-flex gap-4">
-            <img (click)="bottomFilm()" role="button"src="/assets/images/filmicona.jpg" alt="User Image" class="bi text-body-secondary flex-shrink-0" width="48" height="48">
-            <div>
-              <h5 class="mb-0">Per Film clicca <a class="welcome-link" routerLink="/prefilm">qui</a></h5>
-            </div>
-          </li>
-          <li class="d-flex gap-4">
-            <img (click)="bottomGeneri()" role="button" src="/assets/images/genericona.jpg" alt="User Image" class="bi text-body-secondary flex-shrink-0" width="48" height="48">
-            <div>
-              <h5 class="mb-0">Per Generi clicca <a class="welcome-link" routerLink="/Pregeneri">qui</a></h5>
-            </div>
-          </li>
-          <li class="d-flex gap-4">
-            <img (click)="bottomInterpreti()" role="button"src="/assets/images/attoricona.jpg" alt="User Image" class="bi text-body-secondary flex-shrink-0" width="48" height="48">
-            <div>
-              <h5 class="mb-0">Per Interpreti clicca <a class="welcome-link" routerLink="/preinterprete">qui</a></h5>
-            </div>
-          </li>
-        </ul>
-      </div>
+<div class="welcome-component"></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="d-flex justify-content-around mt-5">
+  <div class="card welcome-card" (click)="navigateToPreFilm()"(mouseover)="onMouseOver($event)" (mouseleave)="onMouseLeave($event)">
+    <img src="/assets/images/filmicon.jpg" alt="Film Icon" class="card-img-top card-gif" paused>
+    <div class="card-body">
+      <h5 class="card-title">Film</h5>
+    </div>
+  </div>
+
+  <div class="card welcome-card" (click)="navigateToPreGeneri()" (mouseover)="onMouseOver($event)" (mouseleave)="onMouseLeave($event)">
+    <img src="/assets/images/genereicon.jpg" alt="Generi Icon" class="card-img-top" paused>
+    <div class="card-body">
+      <h5 class="card-title">Generi</h5>
+    </div>
+  </div>
+
+  <div class="card welcome-card" (click)="navigateToPreInterprete()" (mouseover)="onMouseOver($event)" (mouseleave)="onMouseLeave($event)">
+    <img src="/assets/images/attoreicon.jpg" alt="Interpreti Icon" class="card-img-top" paused>
+    <div class="card-body">
+      <h5 class="card-title">Interpreti</h5>
     </div>
   </div>
 </div>
