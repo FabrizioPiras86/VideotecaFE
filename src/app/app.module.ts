@@ -25,7 +25,6 @@ import { InterpretiricercaperidComponent } from './component/Interpreti/interpre
 import { InterpretiricercapernomeocognomeComponent } from './component/Interpreti/interpretiricercapernomeocognome/interpretiricercapernomeocognome.component';
 import { InterpreticreaComponent } from './component/Interpreti/interpreticrea/interpreticrea.component';
 import { PrefilmComponent } from './component/Film/prefilm/prefilm.component';
-<<<<<<< HEAD
 import { FilmcreaComponent } from './component/Film/filmcrea/filmcrea.component';
 import { SearchComponent } from './component/Film/search/search.component';
 import { ModificafilmComponent } from './component/Film/modificafilm/modificafilm.component';
@@ -36,8 +35,6 @@ import { RegistrazioneComponent } from './component/Utenti/registrazione/registr
 import { ModificapersonaleComponent } from './component/Utenti/modificapersonale/modificapersonale.component';
 import { HomedashboardComponent } from './component/Dashboard/homedashboard/homedashboard.component';
 import { ClientidashboardComponent } from './component/Dashboard/clientidashboard/clientidashboard.component';
-=======
->>>>>>> abd7ef8c6cb5a4a166fa82ce5a8a831cad11a170
 
 
 
@@ -63,7 +60,6 @@ import { ClientidashboardComponent } from './component/Dashboard/clientidashboar
     InterpretiricercaperidComponent,
     InterpretiricercapernomeocognomeComponent,
     InterpreticreaComponent,
-<<<<<<< HEAD
     PrefilmComponent,
     FilmcreaComponent,
     SearchComponent,
@@ -75,9 +71,7 @@ import { ClientidashboardComponent } from './component/Dashboard/clientidashboar
     ModificapersonaleComponent,
     HomedashboardComponent,
     ClientidashboardComponent,
-=======
     PrefilmComponent
->>>>>>> abd7ef8c6cb5a4a166fa82ce5a8a831cad11a170
   ],
   imports: [
     BrowserModule,
