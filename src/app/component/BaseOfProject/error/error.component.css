@@ -5,12 +5,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Altezza a schermo intero */
-  background-color: #f8f8f8; /* Colore di sfondo */
+  height: 100vh; 
+  background-color: #f8f8f8; 
 }
 
 .error-container img {
-  width: 1400px; /* Imposta la larghezza dell'immagine come desiderato */
-  height: auto; /* Mantieni l'aspetto proporzionale */
-  margin-bottom: 20px; /* Aggiunge un margine inferiore per separare l'immagine dal testo */
+  width: 1400px; 
+  height: auto; 
+  margin-bottom: 20px; 
 }

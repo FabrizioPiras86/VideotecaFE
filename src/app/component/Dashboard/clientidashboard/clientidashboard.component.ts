@@ -13,12 +13,11 @@ export class ClientidashboardComponent implements OnInit {
   searchResults: any;
   showUpdateForm: boolean = false;
 
-  // Dichiarazione della proprietà updatedUser
   updatedUser: Utente = {
     username: '',
     nome: '',
     cognome: '',
-    ddn: new Date(), // Inizializzazione con una nuova data
+    ddn: new Date(), 
     email: '',
     autorizzazione: 0,
     idUtente: 0,
@@ -33,14 +32,11 @@ export class ClientidashboardComponent implements OnInit {
     this.utentiService.deleteUser(idUtente).subscribe(
       (response) => {
         console.log('Utente eliminato con successo', response);
-        // Aggiungi un alert per l'eliminazione riuscita
         alert('Operazione riuscita con successo: Utente eliminato.');
-        // Aggiorna i risultati della ricerca
         window.location.reload();
       },
       (error) => {
         console.error("Errore durante l'eliminazione dell'utente", error);
-        // Aggiungi un alert per l'eliminazione non riuscita
         alert('Operazione non riuscita: Errore durante l\'eliminazione dell\'utente.');
       }
     );
@@ -50,14 +46,11 @@ export class ClientidashboardComponent implements OnInit {
     this.utentiService.updateUserAdmin(utente.username!, utente).subscribe(
       (response) => {
         console.log('Dati utente aggiornati con successo', response);
-        // Aggiungi un alert per l'aggiornamento riuscito
         alert('Operazione riuscita con successo: Dati utente aggiornati.');
-        // Nascondi il form di aggiornamento
         window.location.reload();
       },
       (error) => {
         console.error("Errore durante l'aggiornamento dei dati utente", error);
-        // Aggiungi un alert per l'aggiornamento non riuscito
         alert('Operazione non riuscita: Errore durante l\'aggiornamento dei dati utente.');
       }
     );
@@ -102,7 +95,7 @@ export class ClientidashboardComponent implements OnInit {
             (results) =>
               (this.searchResults = Array.isArray(results)
                 ? results
-                : [results]), // Ensure array
+                : [results]), 
             (error) =>
               console.error('Errore durante la ricerca per email:', error)
           );
@@ -115,13 +108,11 @@ export class ClientidashboardComponent implements OnInit {
     }
   }
 
-  // Funzione per visualizzare il form di aggiornamento utente
   showUserUpdateForm(utente: Utente) {
     this.updatedUser = { ...utente };
     this.showUpdateForm = true;
   }
 
-  // Funzione per nascondere il form di aggiornamento utente
   hideUpdateForm() {
     this.showUpdateForm = false;
   }

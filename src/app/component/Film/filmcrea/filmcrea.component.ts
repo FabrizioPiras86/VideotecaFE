@@ -19,8 +19,8 @@ export class FilmcreaComponent implements OnInit {
   filmCreato: Film | undefined;
   generi: Genere[] = [];
   interpretiArray: Interprete[] = [];
-  paginazioneGeneri: number = 1; // Variabile per la pagina corrente dei generi
-  paginazioneInterpreti: number = 1; // Variabile per la pagina corrente degli interpreti
+  paginazioneGeneri: number = 1; 
+  paginazioneInterpreti: number = 1; 
 
   constructor(
     private filmService: FilmService,

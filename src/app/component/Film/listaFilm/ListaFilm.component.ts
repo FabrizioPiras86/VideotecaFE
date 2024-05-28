@@ -9,8 +9,8 @@ import { Film } from '../../../model/film.model';
 })
 export class ListaFilmComponent implements OnInit {
   films: Film[] = [];
-  p: number = 1; // Inizializza la variabile di pagina a 1
-  pageSize: number = 10; // Imposta il numero di film per pagina
+  p: number = 1; 
+  pageSize: number = 10; 
 
   constructor(private filmService: FilmService) { }
 

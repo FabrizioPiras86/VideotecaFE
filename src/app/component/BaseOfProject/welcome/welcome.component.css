@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Larghezza del 100% della finestra */
-  height: 100vh; /* Altezza del 100% della finestra */
-  background-image: url('/assets/images/gif/welcome.jpg'); /* Percorso del tuo file di immagine di sfondo */
-  background-size: cover; /* Assicura che l'immagine di sfondo copra l'intero elemento */
-  background-position: center; /* Posiziona l'immagine di sfondo al centro */
-  opacity: 0.4; /* Opacità dello sfondo */
+  width: 100vw; 
+  height: 100vh; 
+  background-image: url('/assets/images/gif/welcome.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  opacity: 0.4; 
   z-index: -1
 }
 .welcome-card {

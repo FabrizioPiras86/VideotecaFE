@@ -1,16 +1,3 @@
-/* .date-input {
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  padding: 10px;
-  font-size: 16px;
-  transition: border-color 0.3s ease-in-out;
-}
-
-.date-input:focus {
-  border-color: #80bdff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-} */
 .background-image {
   position: absolute;
   top: 0;
@@ -25,21 +12,21 @@
 }
 
 .container {
-  position: relative; /* Imposta la posizione relativa */
-  z-index: 1; /* Imposta un indice z superiore per farlo apparire sopra */
+  position: relative; 
+  z-index: 1;
   padding: 20px;
   border-radius: 10px;
-  background-color: #f8f9fa; /* Colore di sfondo */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+  background-color: #f8f9fa; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .btn-primary {
-  background-color: #007bff; /* Colore pulsante */
+  background-color: #007bff; 
   border-color: #007bff;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3; /* Colore pulsante al passaggio del mouse */
+  background-color: #0056b3; 
   border-color: #0056b3;
 }
 
@@ -48,10 +35,10 @@
 }
 
 .list-group-item {
-  border-color: #dee2e6; /* Colore bordo elementi lista */
+  border-color: #dee2e6; 
   border-radius: 5px;
   margin-bottom: 5px;
-  background-color: #fff; /* Colore sfondo elementi lista */
+  background-color: #fff; 
 }
 
 .result-container {
@@ -65,5 +52,5 @@
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
-  width: 80%; /* o qualsiasi larghezza desiderata */
+  width: 80%;
 }

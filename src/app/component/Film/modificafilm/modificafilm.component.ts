@@ -27,11 +27,9 @@ export class ModificafilmComponent {
         (response: Film) => {
           this.filmUpdated = response;
           console.log('Film aggiornato con successo', this.filmUpdated);
-          // Esegui altre azioni dopo l'aggiornamento se necessario
         },
         error => {
           console.error('Si è verificato un errore durante l\'aggiornamento del film', error);
-          // Gestisci l'errore adeguatamente
         }
       );
   }

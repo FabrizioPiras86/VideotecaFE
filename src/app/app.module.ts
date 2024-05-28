@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { ErrorComponent } from './component/BaseOfProject/error/error.component';
 import { FooterComponent } from './component/BaseOfProject/footer/footer.component';
 import { HomeComponent } from './component/BaseOfProject/home/home.component';
-import { JumbotronComponent } from './component/BaseOfProject/jumbotron/jumbotron.component';
 import { LoginComponent } from './component/BaseOfProject/login/login.component';
 import { LogoutComponent } from './component/BaseOfProject/logout/logout.component';
 import { NavigationBarComponent } from './component/BaseOfProject/navigation-bar/navigation-bar.component';
@@ -47,7 +46,6 @@ import { ClientidashboardComponent } from './component/Dashboard/clientidashboar
     ListaFilmComponent,
     NavigationBarComponent,
     FooterComponent,
-    JumbotronComponent,
     ListaGeneriComponent,
     LogoutComponent,
     ListaInterpretiComponent,

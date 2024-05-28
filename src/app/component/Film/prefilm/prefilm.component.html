@@ -17,7 +17,6 @@
   <div class="album py-5 bg-body-tertiary">
     <div class="container-fluid">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <!-- Primo Riquadro -->
         <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/filmcrea">
@@ -29,7 +28,6 @@
             </div>
           </div>
         </div>
-        <!-- Secondo Riquadro -->
         <div class="col">
           <div class="card shadow-sm">
             <a href="/search">
@@ -41,7 +39,6 @@
             </div>
           </div>
         </div>
-        <!-- Ottavo Riquadro -->
         <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/modificafilm">
@@ -53,7 +50,6 @@
             </div>
           </div>
         </div>
-        <!-- Nono Riquadro -->
         <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/aggiungi">
@@ -65,7 +61,6 @@
             </div>
           </div>
         </div>
-        <!-- Decimo Riquadro -->
         <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/modificagenere">
@@ -77,7 +72,6 @@
             </div>
           </div>
         </div>
-        <!-- Undicesimo Riquadro -->
         <div class="col" *ngIf="isAdmin()">
           <div class="card shadow-sm">
             <a href="/cancella">

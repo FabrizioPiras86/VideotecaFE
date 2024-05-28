@@ -22,11 +22,9 @@ export class ModificapersonaleComponent implements OnInit {
   loadUserData(): void {
     this.utentiService.getUserByUsername(this.username).subscribe((data: Utente) => {
       this.utente = data;
-      // Converti la data di nascita nel fuso orario locale
       if (this.utente.ddn) {
         console.log(this.utente.ddn.toDateString())
         this.utente.ddn = new Date(this.utente.ddn);
-        // Applica la correzione del fuso orario
         this.utente.ddn.setMinutes(this.utente.ddn.getMinutes() - this.utente.ddn.getTimezoneOffset());
       }
       console.log(this.utente);

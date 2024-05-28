@@ -11,7 +11,7 @@ export class WelcomeComponent implements OnInit {
   userId: string = '';
   titolo: string = "Benvenuti in Alpha Videoteca";
   sottotitolo: string = "Tantissimi film da vedere e scaricare";
-  gifPlaying: boolean = false; // Variabile per controllare lo stato della GIF
+  gifPlaying: boolean = false; 
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
