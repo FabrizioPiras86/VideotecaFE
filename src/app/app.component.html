@@ -1,5 +1,13 @@
-<app-navigation-bar></app-navigation-bar>
-<div class="from-botton">
+<div class="d-flex flex-column min-vh-100">
+
+<app-navigation-bar class="navbar-fixed-top">
+</app-navigation-bar>
+
+<main class="flex-grow-1">
     <router-outlet></router-outlet>
-  </div>
-<app-footer></app-footer>
+</main>
+
+<app-footer class="text-center py-0 mt-auto">
+</app-footer>
+
+</div>

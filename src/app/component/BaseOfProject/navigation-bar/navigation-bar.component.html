@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">ALPHA Videoteca</a>
 
@@ -32,11 +32,11 @@
           <img src="/assets/images/user.jpg" alt="IMG" class="img-circle" width="50" height="50">
         </button>
         <!-- navigation-bar.component.html -->
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/login">Accedi</a></li>
-          <li><a class="dropdown-item" href="/registrazione">Registrati</a></li>
-          <li *ngIf="isLogged()"><a class="dropdown-item" href="/modificapersonale">Modifica Personale</a></li>
-          <li *ngIf="isAdmin()"><a class="dropdown-item" href="/homedashboard">Dashboard</a></li>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" (click)="handleLoginClick()">Accedi</a></li>
+          <li><a class="dropdown-item" routerLink="/registrazione">Registrati</a></li>
+          <li *ngIf="isLogged()"><a class="dropdown-item" routerLink="/modificapersonale">Modifica Personale</a></li>
+          <li *ngIf="isAdmin()"><a class="dropdown-item" routerLink="/homedashboard">Dashboard</a></li>
           <li>
             <hr class="dropdown-divider">
           </li>

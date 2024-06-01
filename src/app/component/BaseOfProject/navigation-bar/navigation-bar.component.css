@@ -1,12 +1,21 @@
-img {
-  display: inline-block;
+.navbar-custom {
+  background: linear-gradient(to left, #252525, #747474, #252525);
 }
 
-.dduser {
-  margin-right: 50px;
-  margin-left: 20px;
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #fff;
 }
 
-nav {
-  margin-bottom: 0.8%;
+.navbar-custom .dropdown-menu .dropdown-item {
+  color: #ffffff; 
+}
+
+.navbar-custom .dropdown-menu {
+  background-color: #252525;
+}
+.dropdown-toggle {
+  padding: 10px; 
+  width: auto; 
+  z-index: 9999; 
 }

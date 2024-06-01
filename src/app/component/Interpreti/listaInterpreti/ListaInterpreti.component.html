@@ -1,27 +1,25 @@
 <div class="background-image">
   <div class="content">
-    <p></p>
-    <p></p>
     <h1>Interpreti in catalogo</h1>
 
     <table id="interpreti" border="1">
       <caption>Lista aggiornata di tutti gli interpreti presenti nel database</caption>
       <thead>
         <tr>
-          <th>Codice</th>
           <th>Nome</th>
           <th>Cognome</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let varInterpreti of interpreti | paginate: { itemsPerPage: pageSize, currentPage: p }">
-          <td>{{ varInterpreti.idInterprete }}</td>
-          <td>{{ varInterpreti.nome }} </td>
+          <td>{{ varInterpreti.nome }}</td>
           <td>{{ varInterpreti.cognome }}</td>
         </tr>
       </tbody>
     </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <div class="pagination">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <p>Per tornare alla pagina di benvenuto, clicca <a href="/welcome/Utente">qui</a></p>
   </div>
 </div>
-

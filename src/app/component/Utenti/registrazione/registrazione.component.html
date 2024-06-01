@@ -1,5 +1,11 @@
 <div class="registrazione-container">
-  <div class="sfondo-registrazione"></div>
+  <video class="sfondo-registrazione" autoplay muted loop>
+    <source src="/assets/images/sfondoregistrazione.mp4" type="video/mp4">
+    Il tuo browser non supporta il tag video.
+  </video>
+  <div class="logo">
+    <img src="./assets/images/logos.png" alt="Logo">
+  </div>
   <div class="form-container">
     <h2>Registrazione</h2>
     <form [formGroup]="registrazioneForm" (ngSubmit)="onSubmit()">
@@ -18,4 +24,3 @@
     </form>
   </div>
 </div>
-

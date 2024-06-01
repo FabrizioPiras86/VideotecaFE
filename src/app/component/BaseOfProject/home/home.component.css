@@ -5,7 +5,7 @@
   overflow: hidden; 
 }
 
-.gif {
+.video {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,33 +13,86 @@
   height: 100%;
   object-fit: cover; 
   object-position: center;
-  opacity: 1;
   z-index: -1;
+  opacity: 0.4;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+}
+
+.logo {
+  position: absolute;
+  top: 40px; /* Posiziona il logo 20px dalla parte superiore */
+  left: 50%;
+  transform: translateX(-50%); /* Per centrare orizzontalmente */
+  z-index: 2; /* Assicura che il logo sia sopra il contenuto */
+}
+
+.logo img {
+  max-width: 235px;
+  border-radius: 15%;
 }
 
 .content-wrapper {
   position: absolute;
-  top: 65%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
   text-align: center;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1; /* Assicura che il contenuto sia sopra l'overlay */
 }
 
+
 .content {
-  background-color: rgba(255, 255, 255, 0.5);
   padding: 20px;
-  border-radius: 40px;
+  border-radius: 20px;
 }
 
 .content h1 {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .content p {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .content a {
-  color: rgb(0, 0, 0);
+  color: #fff;
+  background-color: #007bff; /* Adjust as needed */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.content a:hover {
+  background-color: #0056b3; /* Adjust hover color */
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.carousel img {
+  max-width: 100px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.1);
+}
+
+.footer {
+  overflow: hidden;
 }

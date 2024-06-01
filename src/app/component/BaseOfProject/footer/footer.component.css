@@ -1,0 +1,10 @@
+.footer {
+  background: linear-gradient(to right, #333, #555, #333); /* Gradient scuro ai lati e chiaro al centro */
+  color: #fff; /* Colore del testo chiaro */
+  padding: 20px 0; /* Aggiungi spaziatura sopra e sotto al testo */
+  text-align: center; /* Allinea il testo al centro */
+}
+
+.footer p {
+  margin-bottom: 0; /* Rimuovi lo spazio inferiore del paragrafo */
+}

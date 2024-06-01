@@ -48,7 +48,7 @@ export class RegistrazioneComponent {
         },
         error: (e) => {
           console.error('Errore durante la registrazione:', e.message);
-          alert('Si è verificato un errore durante la registrazione. Si prega di riprovare.');
+          alert("L'username è già presente, Si prega di riprovare.");
         }
       })
     }

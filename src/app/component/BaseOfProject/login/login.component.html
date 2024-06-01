@@ -1,37 +1,9 @@
+<body>
 <div class="container" id="container">
-  <div class="form-container sign-up-container">
-    <form (ngSubmit)="gestAuth()">
-      <div class="social-container">
-        <a href="#" class="social">
-          <img src="/assets/images/face.jpg" alt="User Image" class="bi text-body-secondary flex-shrink-0" width="40" height="40">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="social">
-          <img src="/assets/images/google.jpg" alt="User Image google" class="bi text-body-secondary flex-shrink-0" width="40" height="40">
-          <i class="fab fa-google-plus-g"></i>
-        </a>
-        <a href="#" class="social">
-          <img src="/assets/images/linkedin.jpg" alt="User Image google" class="bi text-body-secondary flex-shrink-0" width="40" height="40">
-          <i class="fab fa-google-linkedin-g"></i>
-        </a>
-      </div>
-      <span>o usa il tuo account</span>
-      <div>
-        <label for="userId">User ID:</label>
-        <input type="text" id="userId" [(ngModel)]="username" name="userId" required>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" [(ngModel)]="password" name="password" required>
-
-        <button type="submit">Connetti</button>
-      </div>
-    </form>
-  </div>
   <div class="form-container sign-in-container">
     <form (ngSubmit)="gestAuth()">
-      <p></p>
       <h3>Sign in</h3>
-      <div class="social-container">
+      <!-- <div class="social-container"> SERVONO AD IMPLEMENTARE REGISTRAZIONI CON FACEBOOK ECC
         <a href="#" class="social">
           <img src="/assets/images/face.jpg" alt="User Image" class="bi text-body-secondary flex-shrink-0" width="48" height="48">
           <i class="fab fa-facebook-f"></i>
@@ -42,10 +14,10 @@
         </a>
         <a href="#" class="social">
           <img src="/assets/images/linkedin.jpg" alt="User Image google" class="bi text-body-secondary flex-shrink-0" width="40" height="40">
-          <i class="fab fa-google-linkedin-g"></i>
+          <i class="fab fa-linkedin-in"></i>
         </a>
-      </div>
-      <span>o usa il tuo account</span>
+      </div> -->
+      <span>usa il tuo account</span>
       <div>
         <label for="userId">User ID:</label>
         <input type="text" id="userId" [(ngModel)]="username" name="userId" required>
@@ -54,6 +26,7 @@
         <input type="password" id="password" [(ngModel)]="password" name="password" required>
 
         <button type="submit">Connetti</button>
+        <p>Accedendo al tuo account dichiari di aver letto e accetti le nostre Condizioni generali di uso e vendita.</p>
       </div>
     </form>
   </div>
@@ -63,7 +36,9 @@
         <h1>Hello, Friend!</h1>
         <p>Inserisci i tuoi dati personali e inizia il viaggio con noi</p>
         <button class="ghost" id="signUp" [routerLink]="['/registrazione']">Registrati</button>
+        <p>Registrandoti dichiari di aver letto e accetti integralmente le nostre Condizioni generali di uso e vendita.</p>
       </div>
     </div>
   </div>
 </div>
+</body>

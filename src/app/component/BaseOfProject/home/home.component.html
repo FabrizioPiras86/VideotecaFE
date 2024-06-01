@@ -1,8 +1,31 @@
 <div class="background">
-  <img src="./assets/images/sfondohome.gif" class="gif" alt="GIF di sfondo">
+  <video autoplay muted loop class="video">
+    <source src="./assets/images/sfondohome.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+  <div class="logo">
+    <img src="./assets/images/logos.png" alt="Logo">
+  </div>
   <div class="content-wrapper">
     <div class="content">
-      <h3>Clicca <a routerLink="/login">qui</a> per effettuare il login o la registrazione </h3>
+      <h1>Welcome to Our Futuristic<br>Cinema Experience</h1>
+      <p>Explore the latest movies and shows.</p>
+      <a (click)="onGetStarted()">Get Started</a>
+    </div>
+    <div class="carousel">
+      <img src="./assets/images/film/immagine1.jpg" alt="Movie Poster 1">
+      <img src="./assets/images/film/immagine2.jpg" alt="Movie Poster 2">
+      <img src="./assets/images/film/immagine3.jpg" alt="Movie Poster 3">
+      <img src="./assets/images/film/immagine4.jpg" alt="Movie Poster 4">
+      <img src="./assets/images/film/immagine5.jpg" alt="Movie Poster 5">
+      <img src="./assets/images/film/immagine6.jpg" alt="Movie Poster 6">
+      <img src="./assets/images/film/immagine7.jpg" alt="Movie Poster 7">
+      <img src="./assets/images/film/immagine8.jpg" alt="Movie Poster 8">
+      <img src="./assets/images/film/immagine9.jpg" alt="Movie Poster 9">
+      <img src="./assets/images/film/immagine10.jpg" alt="Movie Poster 10">
+      <img src="./assets/images/film/immagine11.jpg" alt="Movie Poster 11">
+      <img src="./assets/images/film/immagine12.jpg" alt="Movie Poster 12">
     </div>
   </div>
 </div>

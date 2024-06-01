@@ -1,3 +1,15 @@
+.logo {
+  position: absolute;
+  top: 40px; /* Posiziona il logo 20px dalla parte superiore */
+  left: 50%;
+  transform: translateX(-50%); /* Per centrare orizzontalmente */
+  z-index: 2; /* Assicura che il logo sia sopra il contenuto */
+}
+
+.logo img {
+  max-width: 235px;
+  border-radius: 15%;
+}
 .registrazione-container {
   position: relative;
   width: 100%;
@@ -73,3 +85,4 @@ button:hover {
   width: 80%;
   margin: 0 auto;
 }
+

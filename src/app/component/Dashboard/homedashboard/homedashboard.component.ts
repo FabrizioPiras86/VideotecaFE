@@ -1,6 +1,6 @@
+import Chart from 'chart.js/auto';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FilmService } from '../../../services/films.service';
-import Chart from 'chart.js/auto';
 import { GeneriService } from '../../../services/generi-service.service';
 import { InterpretiService } from '../../../services/interpreti.service';
 import { UtentiService } from '../../../services/utenti.service';
