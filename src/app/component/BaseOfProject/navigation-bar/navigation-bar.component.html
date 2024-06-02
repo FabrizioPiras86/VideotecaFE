@@ -33,10 +33,10 @@
         </button>
         <!-- navigation-bar.component.html -->
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" (click)="handleLoginClick()">Accedi</a></li>
-          <li><a class="dropdown-item" routerLink="/registrazione">Registrati</a></li>
-          <li *ngIf="isLogged()"><a class="dropdown-item" routerLink="/modificapersonale">Modifica Personale</a></li>
-          <li *ngIf="isAdmin()"><a class="dropdown-item" routerLink="/homedashboard">Dashboard</a></li>
+          <li><a class="dropdown-item" href="/login">Accedi</a></li>
+          <li><a class="dropdown-item" href="/registrazione">Registrati</a></li>
+          <li *ngIf="isLogged()"><a class="dropdown-item" href="/modificapersonale">Modifica Personale</a></li>
+          <li *ngIf="isAdmin()"><a class="dropdown-item" href="/homedashboard">Dashboard</a></li>
           <li>
             <hr class="dropdown-divider">
           </li>
