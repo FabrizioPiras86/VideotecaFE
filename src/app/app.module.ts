@@ -34,6 +34,9 @@ import { RegistrazioneComponent } from './component/Utenti/registrazione/registr
 import { ModificapersonaleComponent } from './component/Utenti/modificapersonale/modificapersonale.component';
 import { HomedashboardComponent } from './component/Dashboard/homedashboard/homedashboard.component';
 import { ClientidashboardComponent } from './component/Dashboard/clientidashboard/clientidashboard.component';
+import { PrivacyPolicyComponent } from './component/BaseOfProject/privacy-policy/privacy-policy.component';
+import { TermsOfServiceComponent } from './component/BaseOfProject/terms-of-service/terms-of-service.component';
+import { ContactFormComponent } from './component/BaseOfProject/contact-form/contact-form.component';
 
 
 
@@ -69,7 +72,10 @@ import { ClientidashboardComponent } from './component/Dashboard/clientidashboar
     ModificapersonaleComponent,
     HomedashboardComponent,
     ClientidashboardComponent,
-    PrefilmComponent
+    PrefilmComponent,
+    PrivacyPolicyComponent,
+    TermsOfServiceComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

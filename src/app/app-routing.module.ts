@@ -29,6 +29,9 @@ import { RegistrazioneComponent } from './component/Utenti/registrazione/registr
 import { ModificapersonaleComponent } from './component/Utenti/modificapersonale/modificapersonale.component';
 import { HomedashboardComponent } from './component/Dashboard/homedashboard/homedashboard.component';
 import { ClientidashboardComponent } from './component/Dashboard/clientidashboard/clientidashboard.component';
+import { PrivacyPolicyComponent } from './component/BaseOfProject/privacy-policy/privacy-policy.component';
+import { TermsOfServiceComponent } from './component/BaseOfProject/terms-of-service/terms-of-service.component';
+import { ContactFormComponent } from './component/BaseOfProject/contact-form/contact-form.component';
 
 
 
@@ -59,6 +62,9 @@ const routes: Routes = [
   { path: "modificapersonale", component: ModificapersonaleComponent, canActivate: [RouteGuardServiceService]},
   { path: "homedashboard", component: HomedashboardComponent, canActivate: [RouteGuardServiceService]},
   { path: "clientidashboard", component: ClientidashboardComponent,canActivate: [RouteGuardServiceService]},
+  { path: "privacy", component: PrivacyPolicyComponent},
+  { path: "terms", component: TermsOfServiceComponent},
+  { path: "contact", component: ContactFormComponent},
   { path: "logout", component: LogoutComponent },
   { path: "**", component: ErrorComponent },
 ];

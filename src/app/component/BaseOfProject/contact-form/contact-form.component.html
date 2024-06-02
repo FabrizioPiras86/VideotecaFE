@@ -1,0 +1,28 @@
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-envelope"></i> Contattaci</h1>
+    </header>
+    <section class="about">
+      <h2>Chi Siamo</h2>
+      <p>Benvenuto nel nostro servizio di contatto. Siamo qui per rispondere a tutte le tue domande e richieste. Compila il modulo qui sotto e ti risponderemo al più presto possibile.</p>
+    </section>
+    <div class="contact-form">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" formControlName="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Messaggio</label>
+          <textarea id="message" formControlName="message" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Invia</button>
+      </form>
+    </div>
+  </div>
+</body>

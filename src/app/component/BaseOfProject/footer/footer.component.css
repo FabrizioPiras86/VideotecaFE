@@ -1,10 +1,42 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 .footer {
-  background: linear-gradient(to right, #333, #555, #333); /* Gradient scuro ai lati e chiaro al centro */
+  background: linear-gradient(to right, #1a1a1a, #333, #1a1a1a); /* Gradiente scuro */
   color: #fff; /* Colore del testo chiaro */
-  padding: 20px 0; /* Aggiungi spaziatura sopra e sotto al testo */
+  padding: 20px 0; /* Spaziatura verticale */
   text-align: center; /* Allinea il testo al centro */
 }
 
+.footer .social-icons {
+  margin-bottom: 15px;
+}
+
+.footer .social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #1e90ff; /* Colore al passaggio del mouse */
+}
+
+.footer .footer-links {
+  margin-bottom: 15px;
+}
+
+.footer .footer-links a {
+  color: #bbb;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer .footer-links a:hover {
+  color: #fff;
+}
+
 .footer p {
-  margin-bottom: 0; /* Rimuovi lo spazio inferiore del paragrafo */
+  margin-bottom: 0; 
 }

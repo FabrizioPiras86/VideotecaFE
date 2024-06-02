@@ -1,0 +1,86 @@
+body {
+  background: linear-gradient(to left, #656565, #a4a3a3, #656565);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about {
+  background-color: #1a1a1a; 
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form {
+  background-color: #1a1a1a; 
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form h2 {
+  color: #1e90ff; 
+  font-size: 1.5em;
+}
+
+.contact-form p {
+  margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form .form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+  background: #333;
+  color: #fff;
+}
+
+.contact-form .form-control::placeholder {
+  color: #bbb;
+}
+
+.contact-form .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form .btn:hover {
+  background: #0c7abf;
+}
+
+.contact-form i {
+  font-size: 1.2em;
+  color: #ff6347; /* Colore delle icone */
+}
